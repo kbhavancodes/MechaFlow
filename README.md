@@ -84,3 +84,19 @@ Styling | Tailwind CSS
 AI | Anthropic Claude API
 Deployment | Vercel
 
+
+## 🚧Roadmap🚧  
+
+Project struture  
+
+Decisions and Trade offs  
+
+share complete code  
+
+Prompts used  
+
+Examples  
+
+Limitations
+
+
