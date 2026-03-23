@@ -25,6 +25,23 @@ the mechanical engineering design process from problem to finished product
 | Engineers spend hours on research, material selection, and documentation — not actual engineering. | A 4-agent AI pipeline that takes you from raw problem statement to a finished report in minutes. |
 
 
+
+```mermaid
+flowchart LR
+    A([🧑 Engineer\nProblem Statement]) --> B
+
+    subgraph Pipeline
+        B[🟠 Spark\nIdea Generation]
+        C[🔵 Blueprint\nResearch & Mapping]
+        D[🔴 Forge\nMaterials & Manufacturing]
+        E[🟢 Rivet\nReport Writing]
+        B --> C --> D --> E
+    end
+
+    E --> F([📄 Engineering\nReport])
+```
+
+
 ## Meet The Agents
 <h3><span style="color:#ED4F00">🟠 Spark</span> — Idea Generation</h3>
 You describe the problem. Spark returns a set of distinct solution concepts — from established approaches to unconventional ones.
@@ -45,4 +62,22 @@ Pulls from everything — the problem, Spark's ideas, Blueprint's research, Forg
 Output: Structured report with executive summary, technical analysis, materials section, recommendations, and open items.
 
 
+## Design Process
+
+Mockup - designed in Framer
+
+<img width="623" height="437" alt="Screenshot 2026-03-23 184453" src="https://github.com/user-attachments/assets/88972220-f067-4460-bedf-16c83f4f7d02" />
+
+Final build - 
+
+&nbsp; | Coming soon...
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+Frontend | React + Vite
+Styling | Tailwind CSS
+AI | Anthropic Claude API
+Deployment | Vercel
 
