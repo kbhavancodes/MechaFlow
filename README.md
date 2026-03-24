@@ -25,6 +25,35 @@ the mechanical engineering design process from problem to finished product
 | Engineers spend hours on research, material selection, and documentation — not actual engineering. | A 4-agent AI pipeline that takes you from raw problem statement to a finished report in minutes. |
 
 
+
+
+
+```mermaid
+flowchart LR
+    subgraph Traditional["⏱️ Traditional (hours)"]
+        A[Research] 
+        B[Concept Generation]
+        C[Feasibility Check]
+        D[Materials Selection]
+        E[Report Writing]
+    end
+
+    subgraph MechaFlow["⚡ MechaFlow (minutes)"]
+        F[🟠 Spark]
+        G[🔵 Blueprint]
+        H[🔴 Forge]
+        I[🟢 Rivet]
+    end
+
+    B --- F
+    A & C --- G
+    D --- H
+    E --- I
+```
+
+Why independent agents instead of a locked pipeline?
+Engineers rarely work linearly. You might already have a concept and just need materials research. You might want to run Spark twice with different constraints. Independent agents give you flexibility without sacrificing the ability to chain them end-to-end.
+
 ## Meet The Agents
 <h3><span style="color:#ED4F00">🟠 Spark</span> — Idea Generation</h3>
 You describe the problem. Spark returns a set of distinct solution concepts — from established approaches to unconventional ones.
@@ -45,20 +74,34 @@ Pulls from everything — the problem, Spark's ideas, Blueprint's research, Forg
 Output: Structured report with executive summary, technical analysis, materials section, recommendations, and open items.
 
 
+
+## How It Works
+Each agent runs independently — you can use them in any order, or feed the output of one as the input to another to build a complete pipeline.
+
 ```mermaid
-flowchart LR
-    A([🧑 Engineer\nProblem Statement]) --> B
+flowchart TD
+    A[Your problem statement]
+    B[🟠 Spark - concept ideas]
+    C[🔵 Blueprint - research + feasibility]
+    D[🔴 Forge - materials + manufacturing]
+    E[🟢 Rivet - final report]
 
-    subgraph Pipeline
-        B[🟠 Spark\nIdea Generation]
-        C[🔵 Blueprint\nResearch & Mapping]
-        D[🔴 Forge\nMaterials & Manufacturing]
-        E[🟢 Rivet\nReport Writing]
-        B --> C --> D --> E
-    end
-
-    E --> F([📄 Engineering\nReport])
+    A --> B
+    B --> C
+    B --> D
+    C --> E
+    D --> E
 ```
+
+
+          
+
+Why independent agents instead of a locked pipeline?
+Engineers rarely work linearly. You might already have a concept and just need materials research. You might want to run Spark twice with different constraints. Independent agents give you flexibility without sacrificing the ability to chain them end-to-end.
+
+
+
+
 
 
 
@@ -77,12 +120,75 @@ Final build -
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-Frontend | React + Vite
-Styling | Tailwind CSS
-AI | Anthropic Claude API
-Deployment | Vercel
+
+| Layer        | Technology                     | Why                                                                 |
+|--------------|-------------------------------|----------------------------------------------------------------------|
+| Framework    | Next.js (App Router)          | Built by Vercel (the hosting platform), so deployment is seamless. Enables server-side API routes, keeping API keys secure and never exposed to the browser. |
+| Language     | TypeScript                    | Catches errors early, especially useful when working with AI-generated code. Ensures type safety and consistency across the codebase. |
+| Styling      | Tailwind CSS                  | Utility-first approach allows rapid UI development directly in JSX. Eliminates context switching and avoids CSS complexity like naming and specificity issues. |
+| AI SDK       | @anthropic-ai/sdk             | Official SDK that handles authentication, retries, streaming, and type safety. More reliable and maintainable than raw `fetch()` calls. |
+
+
+
+## Project Structure
+
+
+```
+  
+
+mechaflow/
+├── app/                          # Next.js App Router pages
+│   ├── layout.tsx                # Root layout — fonts, global styles, nav
+│   ├── page.tsx                  # Home/landing page — agent selector
+│   ├── globals.css               # Tailwind base styles + CSS variables
+│   │
+│   ├── spark/
+│   │   └── page.tsx              # 🟠 Spark agent UI
+│   ├── blueprint/
+│   │   └── page.tsx              # 🔵 Blueprint agent UI
+│   ├── forge/
+│   │   └── page.tsx              # 🔴 Forge agent UI
+│   └── rivet/
+│       └── page.tsx              # 🟢 Rivet agent UI
+│
+├── app/api/                      # Server-side API routes (Claude calls go here)
+│   ├── spark/
+│   │   └── route.ts              # POST /api/spark
+│   ├── blueprint/
+│   │   └── route.ts              # POST /api/blueprint
+│   ├── forge/
+│   │   └── route.ts              # POST /api/forge
+│   └── rivet/
+│       └── route.ts              # POST /api/rivet
+│
+├── components/                   # Reusable UI components
+│   ├── AgentCard.tsx             # Card on home page for each agent
+│   ├── PromptInput.tsx           # Textarea + submit button, shared across agents
+│   ├── StreamingOutput.tsx       # Renders streamed markdown from Claude
+│   └── AgentHeader.tsx           # Agent name, color, description header
+│
+├── lib/
+│   └── anthropic.ts              # Anthropic client singleton + system prompts
+│
+├── public/
+│   └── logo.svg                  # MechaFlow logo
+│
+├── CLAUDE.md                     # 🤖 Instructions for Claude Code (vibe coding context)
+├── .env.local                    # Local secrets — NEVER commit this
+├── .env.local.example            # Template for required env vars — safe to commit
+├── .gitignore
+├── next.config.ts
+├── package.json
+├── tailwind.config.ts
+└── tsconfig.json
+```
+
+
+
+
+
+
+
 
 
 ## 🚧Roadmap🚧  
@@ -98,5 +204,7 @@ Prompts used
 Examples  
 
 Limitations
+
+
 
 
