@@ -193,9 +193,7 @@ mechaflow/
 
 ## 🚧Roadmap🚧  
 
-Project struture  
 
-Decisions and Trade offs  
 
 share complete code  
 
@@ -203,7 +201,6 @@ Prompts used
 
 Examples  
 
-Limitations
 
 
 
