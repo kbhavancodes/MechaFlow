@@ -116,7 +116,8 @@ Mockup - designed in Framer
 
 Final build - 
 
-&nbsp; | Coming soon...
+<img width="2559" height="1259" alt="Screenshot 2026-03-25 204743" src="https://github.com/user-attachments/assets/003e4a76-11df-4d81-a427-ea4565f48078" />
+
 
 ## Tech Stack
 
@@ -193,13 +194,18 @@ mechaflow/
 
 ## 🚧Roadmap🚧  
 
+PDF downloads  
+Deployments  
+Video Demo  
 
 
-share complete code  
 
-Prompts used  
 
-Examples  
+## Bugs  
+
+You cannot seamlessly switch agents. You have to reload page.
+
+
 
 
 
