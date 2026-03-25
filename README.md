@@ -185,9 +185,9 @@ mechaflow/
 ```
 
 
+## Deployemnt
 
-
-
+&nbsp;&nbsp;&nbsp; | link coming soon...
 
 
 
@@ -200,10 +200,6 @@ Video Demo
 
 
 
-
-## Bugs  
-
-You cannot seamlessly switch agents. You have to reload page.
 
 
 
