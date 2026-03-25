@@ -193,10 +193,9 @@ mechaflow/
 
 
 ## 🚧Roadmap🚧  
-
-PDF downloads  
-Deployments  
 Video Demo  
+Deployment
+
 
 
 
