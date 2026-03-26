@@ -22,7 +22,7 @@ the mechanical engineering design process from problem to finished product
 
 | The Problem | The Solution |
 |---|---|
-| Engineers spend hours on research, material selection, and documentation — not actual engineering. | A 4-agent AI pipeline that takes you from raw problem statement to a finished report in minutes. |
+| Engineers spend hours on research, material selection, and documentation instead of actual building.. |A 4-agent AI pipeline that takes you from a raw problem statement to a finished report in minutes. |
 
 
 
@@ -56,22 +56,24 @@ Engineers rarely work linearly. You might already have a concept and just need m
 
 ## Meet The Agents
 <h3><span style="color:#ED4F00">🟠 Spark</span> — Idea Generation</h3>
-You describe the problem. Spark returns a set of distinct solution concepts — from established approaches to unconventional ones.
+Describe your problem. Then Spark returns multiple solutions from established approaches to unconventional ones.
 It doesn't choose for you. It makes sure you're not missing anything before you do.
 Output: Written concept descriptions. Precise enough to sketch or take straight to CAD.
 
 <h3><span style="color:#0046B6">🔵  Blueprint</span> — Research & Mapping</h3>
 Blueprint maps the problem space before you commit to a direction. Relevant standards, constraints, prior art, feasibility of proposed solutions.
-Gaps and uncertainties are flagged — not assumed away.
+It doesn't assume anything instead Gaps and uncertainties are flagged .
 Output: Problem analysis, feasibility ratings, and open questions to resolve before proceeding.
 
+
 <h3><span style="color:#AD0000">🔴  Forge</span> — Materials & Manufacturing</h3>
-Takes a solution concept and works out what it's actually made of and how it gets built. Materials, processes, tolerances — calibrated to whether you're prototyping or going to production.
-Output: Ranked material options, process recommendations, tolerances, and failure modes to watch for.
+Forge takes your solution concept and breaks down exactly what it's made of and how to build it. It covers materials, processes, and tolerances, adjusting its recommendations based on whether you're building a prototype or going to production.
+Output: Ranked material options, process recommendations, tolerances, and failure modes to watch out for.
+
 
 <h3><span style="color:#13601B">🟢  Rivet</span> — Report Writing</h3>
-Pulls from everything — the problem, Spark's ideas, Blueprint's research, Forge's recommendations — and writes the engineering report.
-Output: Structured report with executive summary, technical analysis, materials section, recommendations, and open items.
+Rivet pulls together everything from the previous agents: the problem, Spark's ideas, Blueprint's research, and Forge's recommendations. It then turns it all into a single engineering report.
+Output: A structured report with an executive summary, technical analysis, materials section, recommendations, and open items.
 
 
 
@@ -174,9 +176,9 @@ mechaflow/
 ├── public/
 │   └── logo.svg                  # MechaFlow logo
 │
-├── CLAUDE.md                     # 🤖 Instructions for Claude Code (vibe coding context)
-├── .env.local                    # Local secrets — NEVER commit this
-├── .env.local.example            # Template for required env vars — safe to commit
+├── CLAUDE.md                     
+├── .env.local                   
+├── .env.local.example            # Template for required env vars
 ├── .gitignore
 ├── next.config.ts
 ├── package.json
