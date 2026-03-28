@@ -140,45 +140,45 @@ Final build -
   
 
 mechaflow/
-├── app/                          # Next.js App Router pages
-│   ├── layout.tsx                # Root layout — fonts, global styles, nav
-│   ├── page.tsx                  # Home/landing page — agent selector
-│   ├── globals.css               # Tailwind base styles + CSS variables
+├── app/                        
+│   ├── layout.tsx                
+│   ├── page.tsx                  
+│   ├── globals.css              
 │   │
 │   ├── spark/
-│   │   └── page.tsx              # 🟠 Spark agent UI
+│   │   └── page.tsx            
 │   ├── blueprint/
-│   │   └── page.tsx              # 🔵 Blueprint agent UI
+│   │   └── page.tsx             
 │   ├── forge/
-│   │   └── page.tsx              # 🔴 Forge agent UI
+│   │   └── page.tsx            
 │   └── rivet/
-│       └── page.tsx              # 🟢 Rivet agent UI
+│       └── page.tsx             
 │
-├── app/api/                      # Server-side API routes (Claude calls go here)
+├── app/api/                      
 │   ├── spark/
-│   │   └── route.ts              # POST /api/spark
+│   │   └── route.ts              
 │   ├── blueprint/
-│   │   └── route.ts              # POST /api/blueprint
+│   │   └── route.ts             
 │   ├── forge/
-│   │   └── route.ts              # POST /api/forge
+│   │   └── route.ts              
 │   └── rivet/
-│       └── route.ts              # POST /api/rivet
+│       └── route.ts              
 │
-├── components/                   # Reusable UI components
-│   ├── AgentCard.tsx             # Card on home page for each agent
-│   ├── PromptInput.tsx           # Textarea + submit button, shared across agents
-│   ├── StreamingOutput.tsx       # Renders streamed markdown from Claude
-│   └── AgentHeader.tsx           # Agent name, color, description header
+├── components/                  
+│   ├── AgentCard.tsx            
+│   ├── PromptInput.tsx           
+│   ├── StreamingOutput.tsx      
+│   └── AgentHeader.tsx          
 │
 ├── lib/
-│   └── anthropic.ts              # Anthropic client singleton + system prompts
+│   └── anthropic.ts              
 │
 ├── public/
-│   └── logo.svg                  # MechaFlow logo
+│   └── logo.svg                 
 │
 ├── CLAUDE.md                     
 ├── .env.local                   
-├── .env.local.example            # Template for required env vars
+├── .env.local.example            
 ├── .gitignore
 ├── next.config.ts
 ├── package.json
